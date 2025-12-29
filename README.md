@@ -1,14 +1,19 @@
-# Fraud Detection for E-commerce and Banking
+To ensure the README renders perfectly on GitHub without formatting issues or "messy" code blocks, I have rewritten it using Standard GitHub Flavored Markdown (GFM).
 
-## 📌 Project Overview
-This project focuses on building a robust fraud detection system for **Adey Innovations Inc.** and an e-commerce platform. By integrating geolocation data and analyzing transaction patterns, we identify high-risk activities to minimize financial losses.
+I removed all extra metadata tags (like "download content_copy") and simplified the structure so it looks professional on a remote repository.
 
----
+Fraud Detection for E-commerce and Banking
+📌 Project Overview
 
-## 📂 Project Structure
-To maintain professional standards, this repository follows a modular structure:
+This project focuses on building a robust fraud detection system for Adey Innovations Inc. By integrating geolocation data and analyzing transaction patterns, we identify high-risk activities to minimize financial losses in e-commerce and banking environments.
 
-```text
+📂 Project Structure
+code
+Text
+download
+content_copy
+expand_less
+
 fraud-detection/
 ├── .github/
 │   └── workflows/           # CI/CD (Automation for unit tests)
@@ -23,12 +28,59 @@ fraud-detection/
 │   ├── __init__.py
 │   ├── data_preprocessing.py # Cleaning & Geolocation Integration
 │   ├── feature_engineering.py# Transformation & SMOTE
+│   ├── model_training.py    # Training & Evaluation logic
 │   └── visualization.py     # EDA plotting logic
 ├── tests/                   # Automated tests
 ├── models/                  # Saved ML model artifacts (.pkl)
 ├── scripts/                 # Standalone production scripts
 ├── requirements.txt         # Project dependencies
 └── README.md                # Project documentation
+🛠️ Installation & Setup
+
+🚀 Task 1: Data Analysis and Preprocessing
+
+Objective: Clean data and engineer features to prepare for machine learning.
+
+Data Cleaning: Handled missing values and removed duplicates to ensure data integrity.
+
+Geolocation Integration: Mapped IP addresses to countries using pd.merge_asof for high-performance range lookups.
+
+Feature Engineering:
+
+Temporal: Extracted hour_of_day and day_of_week.
+
+Velocity: Created time_since_signup and frequency counts for device_id and ip_address.
+
+Imbalance Handling: Applied SMOTE (Synthetic Minority Over-sampling Technique) to the training set to address the highly imbalanced nature of fraud data.
+
+🚀 Task 2: Model Building and Training
+
+Objective: Develop and evaluate models to accurately detect fraudulent transactions.
+
+1. Model Selection
+
+Baseline: Logistic Regression – Established a performance floor using a linear, interpretable model.
+
+Ensemble: Random Forest – Utilized to capture non-linear relationships and complex fraud patterns.
+
+2. Hyperparameter Tuning
+
+Used GridSearchCV to optimize the Random Forest (tuning n_estimators and max_depth).
+
+Optimized specifically for AUC-PR (Area Under Precision-Recall Curve) rather than simple accuracy.
+
+3. Evaluation & Cross-Validation
+
+Metrics: Focused on AUC-PR, F1-Score, and Confusion Matrices.
+
+Cross-Validation: Implemented 5-Fold Stratified Cross-Validation.
+
+Stability: Reported mean and standard deviation for all folds to ensure model robustness.
+
+4. Results & Justification
+
+The Random Forest model outperformed the baseline across all minority-class metrics. It was selected for the final pipeline due to its superior ability to handle high-dimensional feature interactions and its stability during cross-validation.
+
 🛠️ Installation & Setup
 
 Clone the repository:
@@ -50,71 +102,34 @@ content_copy
 expand_less
 pip install -r requirements.txt
 
-Data Placement:
+Data Setup:
 
-Place Fraud_Data.csv and IpAddress_to_Country.csv into the data/raw/ directory.
+Place Fraud_Data.csv and IpAddress_to_Country.csv in data/raw/.
 
-🚀 Task 1: Data Analysis and Preprocessing
-1a. Data Cleaning & EDA
+Run the Pipeline:
 
-Modules: src/data_preprocessing.py, src/visualization.py
-
-Cleaning: Handled missing values and duplicates. Removed nulls in critical fields (device_id, ip_address) to ensure identity integrity.
-
-Geolocation Integration: Performed range-based lookup using pd.merge_asof to map transaction IP addresses to their corresponding countries.
-
-Visualizations Included:
-
-Class Distribution: Quantified the imbalance (Normal vs. Fraud).
-
-Univariate Analysis: Distributions of age, purchase_value, source, and browser.
-
-Bivariate Analysis: Relationships between features and the target fraud class.
-
-Geographic Analysis: Top 10 countries by fraud count.
-
-1b. Feature Engineering & Transformation
-
-Module: src/feature_engineering.py
-
-New Features:
-
-hour_of_day & day_of_week: Captures temporal patterns.
-
-time_since_signup: Detects automated "instant" fraud.
-
-device_count & ip_count: Measures transaction frequency/velocity.
-
-Transformation:
-
-Encoding: One-Hot Encoding for categorical variables.
-
-Scaling: StandardScaler applied to all numerical features.
-
-Class Imbalance Handling:
-
-Applied SMOTE strictly to the training set.
-
-Justification: SMOTE creates synthetic samples rather than duplicates, improving the model's ability to learn the minority class boundary without losing data.
-
+code
+Bash
+download
+content_copy
+expand_less
+# This script runs preprocessing and model training
+python scripts/run_modeling.py
 ✅ Best Practices Implemented
 
-Separation of Concerns: EDA code is separated from engineering logic.
+Leakage Prevention: Scaling and SMOTE were performed strictly within the training folds.
 
-Data Leakage Prevention: Stratified splitting was performed before any oversampling or scaling.
+Modularity: Code is organized into a src/ directory for production-level reusability.
 
-Modularity: All core functions are defined in src/ for reusability.
+Performance: Used optimized merging techniques for geolocation data integration.
 
-PEP 8 Compliance: Code follows professional Python naming and documentation standards.
+📅 Future Roadmap
 
-🚀 Future Tasks
+Task 3: Model explainability using SHAP and LIME.
 
-Task 2: Model training and evaluation.
+Task 4: Deployment via Flask and Docker.
 
-Task 3: Model explainability using SHAP.
+Task 5: Real-time dashboarding with Streamlit.
 
-Task 4: Deployment and Dashboarding.
-
-Author: Zemicahel Abraham
-Status: Task 1 Completed
-
+Author: Zemichael Abraham
+Status: Task 2 Completed (Modeling & Evaluation)
