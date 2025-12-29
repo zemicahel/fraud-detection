@@ -76,21 +76,12 @@ The Random Forest model outperformed the baseline across all minority-class metr
 
 Clone the repository:
 
-code
-Bash
-download
-content_copy
-expand_less
+
 git clone https://github.com/your-username/fraud-detection.git
 cd fraud-detection
 
 Install dependencies:
 
-code
-Bash
-download
-content_copy
-expand_less
 pip install -r requirements.txt
 
 Data Setup:
@@ -99,11 +90,7 @@ Place Fraud_Data.csv and IpAddress_to_Country.csv in data/raw/.
 
 Run the Pipeline:
 
-code
-Bash
-download
-content_copy
-expand_less
+
 # This script runs preprocessing and model training
 python scripts/run_modeling.py
 ✅ Best Practices Implemented
@@ -125,8 +112,3 @@ Task 5: Real-time dashboarding with Streamlit.
 Author: Zemichael Abraham
 Status: Task 2 Completed (Modeling & Evaluation)
 
-code
-Code
-download
-content_copy
-expand_less
