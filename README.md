@@ -1,19 +1,12 @@
-To ensure the README renders perfectly on GitHub without formatting issues or "messy" code blocks, I have rewritten it using Standard GitHub Flavored Markdown (GFM).
+# Fraud Detection for E-commerce and Banking
 
-I removed all extra metadata tags (like "download content_copy") and simplified the structure so it looks professional on a remote repository.
+## 📌 Project Overview
+This project focuses on building a robust fraud detection system for **Adey Innovations Inc.** By integrating geolocation data and analyzing transaction patterns, we identify high-risk activities to minimize financial losses in e-commerce and banking environments.
 
-Fraud Detection for E-commerce and Banking
-📌 Project Overview
+---
 
-This project focuses on building a robust fraud detection system for Adey Innovations Inc. By integrating geolocation data and analyzing transaction patterns, we identify high-risk activities to minimize financial losses in e-commerce and banking environments.
-
-📂 Project Structure
-code
-Text
-download
-content_copy
-expand_less
-
+## 📂 Project Structure
+```text
 fraud-detection/
 ├── .github/
 │   └── workflows/           # CI/CD (Automation for unit tests)
@@ -35,8 +28,6 @@ fraud-detection/
 ├── scripts/                 # Standalone production scripts
 ├── requirements.txt         # Project dependencies
 └── README.md                # Project documentation
-🛠️ Installation & Setup
-
 🚀 Task 1: Data Analysis and Preprocessing
 
 Objective: Clean data and engineer features to prepare for machine learning.
@@ -133,3 +124,9 @@ Task 5: Real-time dashboarding with Streamlit.
 
 Author: Zemichael Abraham
 Status: Task 2 Completed (Modeling & Evaluation)
+
+code
+Code
+download
+content_copy
+expand_less
