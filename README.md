@@ -105,9 +105,6 @@ Performance: Used optimized merging techniques for geolocation data integration.
 
 Task 3: Model explainability using SHAP and LIME.
 
-Task 4: Deployment via Flask and Docker.
-
-Task 5: Real-time dashboarding with Streamlit.
 
 Author: Zemichael Abraham
 Status: Task 2 Completed (Modeling & Evaluation)
