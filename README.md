@@ -1,95 +1,3 @@
-# Fraud Detection for E-commerce and Banking
-
-## 📌 Project Overview
-This project focuses on building a robust fraud detection system for **Adey Innovations Inc.** By integrating geolocation data and analyzing transaction patterns, we identify high-risk activities to minimize financial losses in e-commerce and banking environments.
-
----
-
-## 📂 Project Structure
-```text
-
-🚀 Task 1: Data Analysis and Preprocessing
-
-Objective: Clean data and engineer features to prepare for machine learning.
-
-Data Cleaning: Handled missing values and removed duplicates to ensure data integrity.
-
-Geolocation Integration: Mapped IP addresses to countries using pd.merge_asof for high-performance range lookups.
-
-Feature Engineering:
-
-Temporal: Extracted hour_of_day and day_of_week.
-
-Velocity: Created time_since_signup and frequency counts for device_id and ip_address.
-
-Imbalance Handling: Applied SMOTE (Synthetic Minority Over-sampling Technique) to the training set to address the highly imbalanced nature of fraud data.
-
-🚀 Task 2: Model Building and Training
-
-Objective: Develop and evaluate models to accurately detect fraudulent transactions.
-
-1. Model Selection
-
-Baseline: Logistic Regression – Established a performance floor using a linear, interpretable model.
-
-Ensemble: Random Forest – Utilized to capture non-linear relationships and complex fraud patterns.
-
-2. Hyperparameter Tuning
-
-Used GridSearchCV to optimize the Random Forest (tuning n_estimators and max_depth).
-
-Optimized specifically for AUC-PR (Area Under Precision-Recall Curve) rather than simple accuracy.
-
-3. Evaluation & Cross-Validation
-
-Metrics: Focused on AUC-PR, F1-Score, and Confusion Matrices.
-
-Cross-Validation: Implemented 5-Fold Stratified Cross-Validation.
-
-Stability: Reported mean and standard deviation for all folds to ensure model robustness.
-
-4. Results & Justification
-
-The Random Forest model outperformed the baseline across all minority-class metrics. It was selected for the final pipeline due to its superior ability to handle high-dimensional feature interactions and its stability during cross-validation.
-
-🛠️ Installation & Setup
-
-Clone the repository:
-
-
-git clone https://github.com/your-username/fraud-detection.git
-cd fraud-detection
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-Data Setup:
-
-Place Fraud_Data.csv and IpAddress_to_Country.csv in data/raw/.
-
-Run the Pipeline:
-
-
-# This script runs preprocessing and model training
-python scripts/run_modeling.py
-✅ Best Practices Implemented
-
-Leakage Prevention: Scaling and SMOTE were performed strictly within the training folds.
-
-Modularity: Code is organized into a src/ directory for production-level reusability.
-
-Performance: Used optimized merging techniques for geolocation data integration.
-
-📅 Future Roadmap
-
-Task 3: Model explainability using SHAP and LIME.
-
-
-Author: Zemichael Abraham
-Status: Task 2 Completed (Modeling & Evaluation)
-
-
 
 
 
@@ -179,21 +87,12 @@ Proxy/VPN Alert: Trigger additional verification for transactions originating fr
 
 Clone the repository:
 
-code
-Bash
-download
-content_copy
-expand_less
 git clone https://github.com/your-username/fraud-detection.git
 cd fraud-detection
 
 Install dependencies:
 
-code
-Bash
-download
-content_copy
-expand_less
+
 pip install -r requirements.txt
 
 Data Setup:
@@ -202,11 +101,7 @@ Place Fraud_Data.csv and IpAddress_to_Country.csv in data/raw/.
 
 Run the Pipeline:
 
-code
-Bash
-download
-content_copy
-expand_less
+
 # Runs preprocessing, training, and explainability analysis
 python scripts/run_modeling.py
 ✅ Best Practices Implemented
@@ -226,8 +121,3 @@ Task 5: Real-time monitoring dashboard with Streamlit.
 Author: Zemichael Abraham
 Status: Task 3 Completed (Explainability & Insights)
 
-code
-Code
-download
-content_copy
-expand_less
