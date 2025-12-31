@@ -87,7 +87,7 @@ Proxy/VPN Alert: Trigger additional verification for transactions originating fr
 
 Clone the repository:
 
-git clone https://github.com/your-username/fraud-detection.git
+git clone https://github.com/zemicahel/fraud-detection.git
 cd fraud-detection
 
 Install dependencies:
